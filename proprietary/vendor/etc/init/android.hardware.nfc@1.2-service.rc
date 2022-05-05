@@ -1,0 +1,8 @@
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
+    class hal
+    user nfc
+    group nfc
+    disabled
+
+on boot && property:ro.boot.hwname=rain
+    start vendor.nfc_hal_service
